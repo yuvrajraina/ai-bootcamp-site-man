@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --warm: #f7f4ef;
+  --ink: #0d0f14;
+  --slate: #3c4559;
+  --sapphire: #2a5cff;
+  --skyglow: #a8c7ff;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--warm);
+  color: var(--ink);
+  font-family: var(--font-manrope), "Manrope", "Segoe UI", sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-space), "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(12, 17, 29, 0.12);
+}
+
+.hero-bg {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(42, 92, 255, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(168, 199, 255, 0.25), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(42, 92, 255, 0.15), transparent 45%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(247, 244, 239, 0.95));
+}
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--sapphire);
+  outline-offset: 3px;
+}
