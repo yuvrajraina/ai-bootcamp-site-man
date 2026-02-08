@@ -1,4 +1,4 @@
-import { pricing, pricingNote, buildMailto } from "@/lib/content";
+import { pricing, pricingNote, buildSignupForm } from "@/lib/content";
 
 export default function Pricing() {
   return (
@@ -41,10 +41,12 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href={buildMailto()}
+                href={buildSignupForm()}
+                target="_blank"
+                rel="noreferrer"
                 className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-sapphire px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow focus-ring"
               >
-                Register Now
+                Sign Up Form
               </a>
             </div>
           ))}

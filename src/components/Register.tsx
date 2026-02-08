@@ -1,4 +1,10 @@
-import { registerSection, contact, buildMailto, buildWhatsApp } from "@/lib/content";
+import {
+  registerSection,
+  contact,
+  buildMailto,
+  buildSignupForm,
+  buildWhatsApp
+} from "@/lib/content";
 
 export default function Register() {
   return (
@@ -15,7 +21,9 @@ export default function Register() {
             <p className="text-base text-slate">{registerSection.subtitle}</p>
             <div className="flex flex-wrap gap-4">
               <a
-                href={buildMailto()}
+                href={buildSignupForm()}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full bg-sapphire px-6 py-3 text-base font-semibold text-white shadow-soft transition hover:shadow-glow focus-ring"
               >
                 {registerSection.ctaPrimary}

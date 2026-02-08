@@ -1,4 +1,10 @@
-import { footer, contact, buildMailto, buildWhatsApp } from "@/lib/content";
+import {
+  footer,
+  contact,
+  buildMailto,
+  buildSignupForm,
+  buildWhatsApp
+} from "@/lib/content";
 
 export default function Footer() {
   return (
@@ -9,6 +15,14 @@ export default function Footer() {
           <p className="text-sm text-slate">© 2026</p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm text-slate">
+          <a
+            href={buildSignupForm()}
+            target="_blank"
+            rel="noreferrer"
+            className="focus-ring"
+          >
+            {footer.signupLabel}
+          </a>
           <a href={buildMailto()} className="focus-ring">
             {footer.emailLabel}: {contact.email}
           </a>

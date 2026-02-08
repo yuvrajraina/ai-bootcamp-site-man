@@ -1,4 +1,9 @@
-import { navItems, heroContent, buildMailto, buildWhatsApp } from "@/lib/content";
+import {
+  navItems,
+  heroContent,
+  buildSignupForm,
+  buildWhatsApp
+} from "@/lib/content";
 
 export default function Navbar() {
   return (
@@ -27,9 +32,11 @@ export default function Navbar() {
             {heroContent.ctaSecondary}
           </a>
           <a
-            href={buildMailto()}
+            href={buildSignupForm()}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-full bg-sapphire px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow focus-ring"
-            aria-label="Register via email"
+            aria-label="Register via Google Form"
           >
             {heroContent.ctaPrimary}
           </a>

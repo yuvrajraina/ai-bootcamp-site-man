@@ -61,12 +61,13 @@ export const heroContent = {
   headline: "Build Real AI Projects in 8 Weeks.",
   subheadline:
     "2 live sessions/week • 4 mini projects + 1 capstone • GitHub-ready portfolio",
-  ctaPrimary: "Register Now",
+  ctaPrimary: "Sign Up Form",
   ctaSecondary: "WhatsApp Us",
   note: "Limited seats • Beginner-friendly • Mentor feedback"
 };
 
 export const contact = {
+  signupFormLink: "https://forms.gle/apfNuRiLwj5aiaK56",
   email: "yuvraj@netvoks.com",
   whatsappNumber: "+1 3472429951",
   whatsappLinkNumber: "13472429951",
@@ -81,6 +82,8 @@ export const buildMailto = () =>
   `mailto:${contact.email}?subject=${encodeURIComponent(
     contact.mailSubject
   )}&body=${encodeURIComponent(contact.mailBody)}`;
+
+export const buildSignupForm = () => contact.signupFormLink;
 
 export const buildWhatsApp = () =>
   `https://wa.me/${contact.whatsappLinkNumber}?text=${encodeURIComponent(
@@ -397,21 +400,22 @@ export const faqs: FAQItem[] = [
   {
     question: "How do I register?",
     answer:
-      "Click Register Now or WhatsApp Us and we will walk you through the next steps."
+      "Use the Sign Up Form to register. For questions, reach out on email or WhatsApp."
   }
 ];
 
 export const registerSection = {
   title: "Ready to Build Your AI Portfolio?",
   subtitle:
-    "Seats are limited. Secure your spot by contacting Yuvraj directly.",
-  ctaPrimary: "Register Now",
+    "Seats are limited. Sign up using the form below, then use email or WhatsApp for any queries.",
+  ctaPrimary: "Sign Up Form",
   ctaSecondary: "WhatsApp Us",
   reassurance: "Replies within 24 hours on business days."
 };
 
 export const footer = {
   note: "AI Bootcamp by Yuvraj Raina",
+  signupLabel: "Sign Up Form",
   emailLabel: "Email",
   whatsappLabel: "WhatsApp"
 };

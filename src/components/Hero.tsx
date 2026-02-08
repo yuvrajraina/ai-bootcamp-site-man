@@ -1,4 +1,4 @@
-import { heroContent, outcomes, buildMailto, buildWhatsApp } from "@/lib/content";
+import { heroContent, outcomes, buildSignupForm, buildWhatsApp } from "@/lib/content";
 import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
@@ -17,9 +17,11 @@ export default function Hero() {
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href={buildMailto()}
+              href={buildSignupForm()}
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full bg-sapphire px-6 py-3 text-base font-semibold text-white shadow-soft transition hover:shadow-glow focus-ring"
-              aria-label="Register via email"
+              aria-label="Register via Google Form"
             >
               {heroContent.ctaPrimary}
             </a>
