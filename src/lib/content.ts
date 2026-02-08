@@ -338,13 +338,13 @@ export const projects: ProjectItem[] = [
 export const pricing: PricingTier[] = [
   {
     name: "Starter",
-    price: "?X",
+    price: "9999₹",
     description: "Best for focused learners who want live guidance.",
     features: ["Live classes", "Class recordings", "Weekly deliverables"]
   },
   {
     name: "Builder",
-    price: "?X",
+    price: "19999₹",
     description: "For builders who want faster feedback and support.",
     features: [
       "Everything in Starter",
@@ -355,12 +355,12 @@ export const pricing: PricingTier[] = [
   },
   {
     name: "Pro",
-    price: "?X",
-    description: "For serious builders who want 1:1 feedback.",
+    price: "49999₹",
+    description: "For serious builders who want industry level 1:1 feedback.",
     features: [
       "Everything in Builder",
       "1:1 feedback",
-      "Capstone review"
+      "In depth Capstone review"
     ]
   }
 ];
