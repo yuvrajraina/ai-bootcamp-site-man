@@ -17,7 +17,7 @@
 body {
   background: var(--warm);
   color: var(--ink);
-  font-family: var(--font-manrope), "Manrope", "Segoe UI", sans-serif;
+  font-family: "Manrope", "Segoe UI", sans-serif;
   font-feature-settings: "liga" 1, "calt" 1;
 }
 

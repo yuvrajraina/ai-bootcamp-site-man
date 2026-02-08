@@ -1,13 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { siteMeta } from "@/lib/content";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  weight: ["300", "400", "500", "600", "700"]
-});
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -33,8 +27,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        />
+      </head>
       <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} bg-warm text-ink antialiased`}
+        className={`${spaceGrotesk.variable} bg-warm text-ink antialiased`}
       >
         {children}
       </body>
