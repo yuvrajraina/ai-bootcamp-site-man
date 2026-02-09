@@ -39,14 +39,70 @@ export type FAQItem = {
   answer: string;
 };
 
+export type StudentWinItem = {
+  title: string;
+  detail: string;
+  metric: string;
+  proofType: "github" | "deploy" | "linkedin";
+  imageSrc: string;
+  imageAlt: string;
+};
+
+export type TestimonialItem = {
+  name: string;
+  role: string;
+  quote: string;
+};
+
+export type ShippedProjectItem = {
+  title: string;
+  summary: string;
+  badge: string;
+  imageSrc: string;
+  imageAlt: string;
+};
+
+export type CohortInfoItem = {
+  label: string;
+  value: string;
+};
+
+export type MotionSettings = {
+  enableGlobal3D: boolean;
+  enableSectionTilt: boolean;
+  revealDurationMs: number;
+  staggerMs: number;
+  parallaxMaxPx: number;
+  tiltMaxDeg: number;
+  tiltTranslatePx: number;
+};
+
+export type ApplyGoalOption = "job switch" | "projects" | "college" | "founder";
+
+export type ApplyFormValues = {
+  name: string;
+  whatsappNumber: string;
+  goal?: ApplyGoalOption | "";
+};
+
 export const siteMeta = {
   title: "AI Bootcamp (8 Weeks) | Yuvraj Raina",
   description:
     "Build real AI projects in 8 weeks with live classes, weekly deliverables, and mentor feedback. Limited seats.",
   ogTitle: "AI Bootcamp (8 Weeks)",
   ogDescription:
-    "2 live sessions/week • 4 mini projects + 1 capstone • GitHub-ready portfolio",
+    "2 live sessions/week - 4 mini projects + 1 capstone - GitHub-ready portfolio",
   ogImage: "/og-placeholder.svg"
+};
+
+export const motionSettings: MotionSettings = {
+  enableGlobal3D: true,
+  enableSectionTilt: true,
+  revealDurationMs: 550,
+  staggerMs: 90,
+  parallaxMaxPx: 24,
+  tiltMaxDeg: 6,
+  tiltTranslatePx: 8
 };
 
 export const navItems: NavItem[] = [
@@ -54,28 +110,28 @@ export const navItems: NavItem[] = [
   { label: "Program", href: "#program" },
   { label: "Syllabus", href: "#syllabus" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Register", href: "#register" }
+  { label: "Apply", href: "#apply" }
 ];
 
 export const heroContent = {
   headline: "Build Real AI Projects in 8 Weeks.",
   subheadline:
-    "2 live sessions/week • 4 mini projects + 1 capstone • GitHub-ready portfolio",
-  ctaPrimary: "Sign Up Form",
-  ctaSecondary: "WhatsApp Us",
-  note: "Limited seats • Beginner-friendly • Mentor feedback"
+    "2 live sessions/week - 4 mini projects + 1 capstone - GitHub-ready portfolio",
+  ctaPrimary: "Reserve Seat",
+  ctaSecondary: "WhatsApp",
+  note: "Limited seats - Beginner-friendly - Mentor feedback"
 };
 
 export const contact = {
-  signupFormLink: "https://forms.gle/apfNuRiLwj5aiaK56",
   email: "yuvraj@netvoks.com",
-  whatsappNumber: "+1 3472429951",
-  whatsappLinkNumber: "13472429951",
+  linkedinLink: "https://www.linkedin.com/in/yuvraj-raina/",
+  whatsappNumber: "+91 7428999032",
+  whatsappLinkNumber: "917428999032",
   whatsappMessage:
-    "Hi Yuvraj, I want to register for the AI Bootcamp. Please connect with me.",
+    "Hi Yuvraj, I want to reserve my seat for the AI Bootcamp. Please connect with me.",
   mailSubject: "AI Bootcamp Registration",
   mailBody:
-    "Hi Yuvraj,\n\nI would like to register for the AI Bootcamp. Please share the next steps.\n\nThanks"
+    "Hi Yuvraj,\n\nI would like to reserve my seat for the AI Bootcamp. Please share the next steps.\n\nThanks"
 };
 
 export const buildMailto = () =>
@@ -83,12 +139,155 @@ export const buildMailto = () =>
     contact.mailSubject
   )}&body=${encodeURIComponent(contact.mailBody)}`;
 
-export const buildSignupForm = () => contact.signupFormLink;
+export const buildSignupForm = () => "#apply";
 
 export const buildWhatsApp = () =>
   `https://wa.me/${contact.whatsappLinkNumber}?text=${encodeURIComponent(
     contact.whatsappMessage
   )}`;
+
+export const applyFormContent = {
+  title: "Apply / Reserve Seat",
+  subtitle: "Reserve seat for free and pay later if you like the first class.",
+  nameLabel: "Name",
+  whatsappLabel: "WhatsApp number",
+  goalLabel: "Your goal (optional)",
+  goalPlaceholder: "Select your goal",
+  submitLabel: "Reserve Seat",
+  successMessage: "Thanks we will be in touch with you soon",
+  requiredMessage: "This field is required."
+};
+
+export const applyGoalOptions: ApplyGoalOption[] = [
+  "job switch",
+  "projects",
+  "college",
+  "founder"
+];
+
+export const buildApplyWhatsApp = (values: ApplyFormValues) => {
+  const lines = [
+    "Hi Yuvraj, I want to reserve my seat for the AI Bootcamp.",
+    "",
+    `Name: ${values.name.trim()}`,
+    `WhatsApp number: ${values.whatsappNumber.trim()}`
+  ];
+
+  if (values.goal && values.goal.trim().length > 0) {
+    lines.push(`Goal: ${values.goal.trim()}`);
+  }
+
+  return `https://wa.me/${contact.whatsappLinkNumber}?text=${encodeURIComponent(
+    lines.join("\n")
+  )}`;
+};
+
+export const studentWins: StudentWinItem[] = [
+  // Swap these mock screenshots by replacing files in /public/proof and updating imageSrc paths.
+  {
+    title: "GitHub streak to shipped repo",
+    detail: "From first commit to a polished README and deployment notes.",
+    metric: "4 merged project repos",
+    proofType: "github",
+    imageSrc: "/proof/student-win-github.svg",
+    imageAlt: "GitHub style project board with commits, pull requests, and deployment status."
+  },
+  {
+    title: "Live deployment milestone",
+    detail: "Students take apps from local demos to public links with docs.",
+    metric: "First app shipped in week 2",
+    proofType: "deploy",
+    imageSrc: "/proof/student-win-deploy.svg",
+    imageAlt: "Deployed application dashboard with traffic, response time, and release indicators."
+  },
+  {
+    title: "Career signal in public",
+    detail: "Learners post shipping updates and project outcomes on LinkedIn.",
+    metric: "Portfolio stories shared weekly",
+    proofType: "linkedin",
+    imageSrc: "/proof/student-win-linkedin.svg",
+    imageAlt: "LinkedIn style post preview showing project launch update and engagement metrics."
+  }
+];
+
+export const testimonials: TestimonialItem[] = [
+  {
+    name: "Aarav S.",
+    role: "Software Engineer",
+    quote:
+      "I came in with theory only, and left with projects I could actually show in interviews."
+  },
+  {
+    name: "Riya M.",
+    role: "College Student",
+    quote:
+      "The weekly shipping routine made me accountable. I finally finished and deployed real work."
+  },
+  {
+    name: "Kabir P.",
+    role: "Founder",
+    quote:
+      "The sessions were practical and direct. I used the RAG app pattern in my own product."
+  },
+  {
+    name: "Nisha K.",
+    role: "Career Switcher",
+    quote:
+      "I needed structure and feedback. This bootcamp gave me both and helped me build confidence."
+  }
+];
+
+export const whatYouShip: ShippedProjectItem[] = [
+  // Swap these mock screenshots by replacing files in /public/proof and updating imageSrc paths.
+  {
+    title: "Sokoban Solver",
+    summary: "Search algorithms, heuristics, and optimization in a production-style repo.",
+    badge: "Algorithmic depth",
+    imageSrc: "/proof/ship-sokoban.svg",
+    imageAlt: "Sokoban puzzle solver UI with grid board, node expansion chart, and solution path."
+  },
+  {
+    title: "RAG App",
+    summary: "Retrieval with citations, chunking strategy, and evaluation notes.",
+    badge: "LLM app architecture",
+    imageSrc: "/proof/ship-rag.svg",
+    imageAlt: "RAG assistant interface with source citations, retrieved chunks, and confidence panel."
+  },
+  {
+    title: "Assistant App",
+    summary: "A deployed assistant web app with structured output and prompt design.",
+    badge: "Deployed product",
+    imageSrc: "/proof/ship-assistant.svg",
+    imageAlt: "AI assistant product screen with chat, action cards, and deployment status widget."
+  }
+];
+
+export const cohortInfo: CohortInfoItem[] = [
+  {
+    label: "Next cohort start date",
+    value: "15th FEB 2026"
+  },
+  {
+    label: "Days + time",
+    value: "MON+THU, TUE+FRI, SAT+SUN - 11 AM to 1 PM"
+  },
+  {
+    label: "Batch size",
+    value: "20"
+  },
+  {
+    label: "Payment options",
+    value:
+      "payment is due after week 1 of classes when you choose to continue"
+  }
+];
+
+export const pricingOffer = {
+  headline: "Reserve your seat with zero upfront risk",
+  supportingLine:
+    "Reserve seat for free and pay later if you like the first class.",
+  reassurance: "No upfront payment required."
+};
 
 export const instructor = {
   name: "Yuvraj Raina",
@@ -194,10 +393,7 @@ export const syllabus: SyllabusWeek[] = [
       },
       {
         title: "Session 2",
-        topics: [
-          "Hands-on classifier/regressor notebook",
-          "Evaluation"
-        ]
+        topics: ["Hands-on classifier/regressor notebook", "Evaluation"]
       }
     ],
     deliverable: "Mini Lab 2 (supervised learning notebook)"
@@ -217,11 +413,7 @@ export const syllabus: SyllabusWeek[] = [
       },
       {
         title: "Session 2",
-        topics: [
-          "End-to-end mini project",
-          "Dataset selection",
-          "Report writing"
-        ]
+        topics: ["End-to-end mini project", "Dataset selection", "Report writing"]
       }
     ],
     deliverable: "Mini Project 2 (end-to-end ML project)"
@@ -338,38 +530,9 @@ export const projects: ProjectItem[] = [
   }
 ];
 
-export const pricing: PricingTier[] = [
-  {
-    name: "Starter",
-    price: "9999₹",
-    description: "Best for focused learners who want live guidance.",
-    features: ["Live classes", "Class recordings", "Weekly deliverables"]
-  },
-  {
-    name: "Builder",
-    price: "19999₹",
-    description: "For builders who want faster feedback and support.",
-    features: [
-      "Everything in Starter",
-      "Assignments review",
-      "Priority support"
-    ],
-    highlight: "Most popular"
-  },
-  {
-    name: "Pro",
-    price: "49999₹",
-    description: "For serious builders who want industry level 1:1 feedback.",
-    features: [
-      "Everything in Builder",
-      "1:1 feedback",
-      "In depth Capstone review"
-    ]
-  }
-];
+export const pricing: PricingTier[] = [];
 
-export const pricingNote =
-  "Limited seats. Pricing may change for next cohort.";
+export const pricingNote = "Limited seats. Pricing may change for next cohort.";
 
 export const faqs: FAQItem[] = [
   {
@@ -379,8 +542,7 @@ export const faqs: FAQItem[] = [
   },
   {
     question: "What if I miss a live session?",
-    answer:
-      "Each class is recorded and shared so you can catch up."
+    answer: "Each class is recorded and shared so you can catch up."
   },
   {
     question: "How much time should I allocate weekly?",
@@ -400,22 +562,22 @@ export const faqs: FAQItem[] = [
   {
     question: "How do I register?",
     answer:
-      "Use the Sign Up Form to register. For questions, reach out on email or WhatsApp."
+      "Use the Apply form on this page to reserve your seat. For questions, reach out on WhatsApp or email."
   }
 ];
 
 export const registerSection = {
   title: "Ready to Build Your AI Portfolio?",
   subtitle:
-    "Seats are limited. Sign up using the form below, then use email or WhatsApp for any queries.",
-  ctaPrimary: "Sign Up Form",
-  ctaSecondary: "WhatsApp Us",
+    "Seats are limited. Reserve your seat from the apply form, then use email or WhatsApp for any queries.",
+  ctaPrimary: "Reserve Seat",
+  ctaSecondary: "WhatsApp",
   reassurance: "Replies within 24 hours on business days."
 };
 
 export const footer = {
   note: "AI Bootcamp by Yuvraj Raina",
-  signupLabel: "Sign Up Form",
   emailLabel: "Email",
+  linkedinLabel: "LinkedIn",
   whatsappLabel: "WhatsApp"
 };

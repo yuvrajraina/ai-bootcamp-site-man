@@ -1,57 +1,69 @@
-import { pricing, pricingNote, buildSignupForm } from "@/lib/content";
+import { cohortInfo, pricingOffer, heroContent, buildWhatsApp } from "@/lib/content";
+import DepthCard from "./DepthCard";
+import { RevealGroup, RevealItem } from "./RevealGroup";
 
 export default function Pricing() {
   return (
     <section id="pricing" className="section-padding scroll-mt-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate">
-            Pricing
-          </p>
-          <h2 className="text-3xl font-semibold text-ink sm:text-4xl">
-            Choose your learning tier
-          </h2>
-          <p className="max-w-2xl text-base text-slate">
-            Flexible options depending on the level of feedback and support you want.
-          </p>
-        </div>
+        <RevealGroup className="flex flex-col gap-3">
+          <RevealItem>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate">
+              Pricing
+            </p>
+          </RevealItem>
+          <RevealItem>
+            <h2 className="text-3xl font-semibold text-ink sm:text-4xl">
+              {pricingOffer.headline}
+            </h2>
+          </RevealItem>
+          <RevealItem>
+            <p className="max-w-2xl text-base text-slate">{pricingOffer.reassurance}</p>
+          </RevealItem>
+        </RevealGroup>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {pricing.map((tier) => (
-            <div
-              key={tier.name}
-              className={`relative rounded-3xl border border-slate/10 bg-white/80 p-6 shadow-soft ${
-                tier.highlight ? "ring-2 ring-sapphire/50" : ""
-              }`}
+        <RevealGroup className="mt-10">
+          <RevealItem>
+            <DepthCard
+              as="div"
+              className="rounded-3xl border border-slate/10 bg-white/90 p-6 shadow-soft sm:p-8 fx-glow"
             >
-              {tier.highlight && (
-                <span className="absolute -top-3 left-6 rounded-full bg-sapphire px-3 py-1 text-xs font-semibold text-white">
-                  {tier.highlight}
-                </span>
-              )}
-              <h3 className="text-lg font-semibold text-ink">{tier.name}</h3>
-              <p className="mt-2 text-3xl font-semibold text-ink">{tier.price}</p>
-              <p className="mt-2 text-sm text-slate">{tier.description}</p>
-              <ul className="mt-4 space-y-3 text-sm text-slate">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-sapphire" />
-                    <span>{feature}</span>
-                  </li>
+              <p className="rounded-2xl border border-sapphire/25 bg-sapphire/10 px-4 py-3 text-center text-lg font-semibold text-sapphire sm:text-xl">
+                {pricingOffer.supportingLine}
+              </p>
+
+              <RevealGroup className="mt-6 space-y-4">
+                {cohortInfo.map((item) => (
+                  <RevealItem key={item.label}>
+                    <div className="rounded-2xl border border-slate/10 bg-white/95 px-4 py-4 sm:flex sm:items-start sm:justify-between sm:gap-6">
+                      <dt className="text-sm font-semibold uppercase tracking-[0.08em] text-slate">
+                        {item.label}
+                      </dt>
+                      <dd className="mt-2 text-base font-medium text-ink sm:mt-0 sm:text-right">
+                        {item.value}
+                      </dd>
+                    </div>
+                  </RevealItem>
                 ))}
-              </ul>
-              <a
-                href={buildSignupForm()}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-sapphire px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow focus-ring"
-              >
-                Sign Up Form
-              </a>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-sm text-slate">{pricingNote}</p>
+              </RevealGroup>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="#apply"
+                  className="inline-flex items-center justify-center rounded-full bg-sapphire px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow focus-ring"
+                >
+                  {heroContent.ctaPrimary}
+                </a>
+                <a
+                  href={buildWhatsApp()}
+                  className="inline-flex items-center justify-center rounded-full border border-slate/20 bg-white px-6 py-3 text-sm font-semibold text-slate transition hover:border-sapphire hover:text-sapphire focus-ring"
+                >
+                  {heroContent.ctaSecondary}
+                </a>
+              </div>
+            </DepthCard>
+          </RevealItem>
+        </RevealGroup>
       </div>
     </section>
   );

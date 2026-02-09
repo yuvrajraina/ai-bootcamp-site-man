@@ -1,0 +1,33 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">LinkedIn style project post</title>
+  <desc id="desc">Mock screenshot showing a social post about shipped projects with engagement metrics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eff6ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="65" y="55" width="1470" height="790" rx="24" fill="#ffffff" stroke="#dbe3ec"/>
+  <rect x="65" y="55" width="1470" height="76" rx="24" fill="#0a66c2"/>
+  <text x="130" y="104" fill="#e2e8f0" font-family="Segoe UI, Arial" font-size="29">LinkedIn feed</text>
+  <rect x="120" y="180" width="320" height="610" rx="18" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="155" y="224" fill="#334155" font-family="Segoe UI, Arial" font-size="26">Profile</text>
+  <rect x="155" y="250" width="250" height="130" rx="12" fill="#dbeafe"/>
+  <rect x="155" y="405" width="220" height="14" rx="7" fill="#cbd5e1"/>
+  <rect x="155" y="435" width="180" height="14" rx="7" fill="#cbd5e1"/>
+  <rect x="480" y="180" width="1000" height="610" rx="18" fill="#ffffff" stroke="#e2e8f0"/>
+  <circle cx="540" cy="240" r="28" fill="#bfdbfe"/>
+  <rect x="585" y="220" width="280" height="18" rx="9" fill="#1e293b"/>
+  <rect x="585" y="248" width="220" height="14" rx="7" fill="#64748b"/>
+  <text x="520" y="320" fill="#0f172a" font-family="Segoe UI, Arial" font-size="33">Shipped my RAG app this week</text>
+  <rect x="520" y="345" width="890" height="12" rx="6" fill="#cbd5e1"/>
+  <rect x="520" y="368" width="760" height="12" rx="6" fill="#cbd5e1"/>
+  <rect x="520" y="410" width="890" height="230" rx="16" fill="#eff6ff" stroke="#dbeafe"/>
+  <rect x="550" y="440" width="330" height="170" rx="12" fill="#dbeafe"/>
+  <rect x="910" y="440" width="470" height="22" rx="11" fill="#93c5fd"/>
+  <rect x="910" y="476" width="420" height="18" rx="9" fill="#bfdbfe"/>
+  <rect x="910" y="507" width="380" height="18" rx="9" fill="#bfdbfe"/>
+  <rect x="520" y="670" width="890" height="72" rx="14" fill="#f8fafc"/>
+  <text x="560" y="715" fill="#334155" font-family="Segoe UI, Arial" font-size="24">129 reactions   38 comments   14 reposts</text>
+</svg>

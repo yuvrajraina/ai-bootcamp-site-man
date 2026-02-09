@@ -1,0 +1,33 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Deployment dashboard</title>
+  <desc id="desc">Mock screenshot of deployment analytics and release health cards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#ecfeff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="70" y="60" width="1460" height="780" rx="26" fill="#ffffff" stroke="#dce3ed"/>
+  <rect x="70" y="60" width="1460" height="80" rx="26" fill="#0b1324"/>
+  <text x="130" y="111" fill="#dbeafe" font-family="Segoe UI, Arial" font-size="30">Deploy Console</text>
+  <rect x="110" y="180" width="1380" height="170" rx="20" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="150" y="235" fill="#0f172a" font-family="Segoe UI, Arial" font-size="34">Production status</text>
+  <rect x="150" y="260" width="320" height="54" rx="14" fill="#dcfce7"/>
+  <text x="180" y="296" fill="#166534" font-family="Segoe UI, Arial" font-size="24">Healthy - 99.98% uptime</text>
+  <rect x="520" y="260" width="280" height="54" rx="14" fill="#dbeafe"/>
+  <text x="550" y="296" fill="#1e3a8a" font-family="Segoe UI, Arial" font-size="24">Latency 146ms</text>
+  <rect x="840" y="260" width="300" height="54" rx="14" fill="#ede9fe"/>
+  <text x="870" y="296" fill="#5b21b6" font-family="Segoe UI, Arial" font-size="24">Build 3m 22s</text>
+  <rect x="110" y="390" width="860" height="410" rx="20" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="150" y="438" fill="#0f172a" font-family="Segoe UI, Arial" font-size="31">Requests over 24h</text>
+  <polyline points="160,720 250,670 340,695 430,640 520,655 610,590 700,615 790,560 880,600 940,520" fill="none" stroke="#0ea5e9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1000" y="390" width="490" height="190" rx="20" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="1040" y="438" fill="#0f172a" font-family="Segoe UI, Arial" font-size="30">Recent releases</text>
+  <rect x="1040" y="465" width="410" height="36" rx="10" fill="#f1f5f9"/>
+  <rect x="1040" y="515" width="410" height="36" rx="10" fill="#f1f5f9"/>
+  <rect x="1000" y="610" width="490" height="190" rx="20" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="1040" y="658" fill="#0f172a" font-family="Segoe UI, Arial" font-size="30">SLA checks</text>
+  <rect x="1040" y="685" width="410" height="35" rx="10" fill="#dcfce7"/>
+  <rect x="1040" y="733" width="410" height="35" rx="10" fill="#dcfce7"/>
+</svg>
